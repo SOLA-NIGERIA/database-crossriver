@@ -1,4 +1,4 @@
-Starting Build at 10:31:05.44 
+Starting Build at 22:33:43.43 
 DROP VIEW
 CREATE VIEW
 ALTER TABLE
@@ -9,9 +9,9 @@ DETAIL:  view application.systematic_registration_certificates depends on functi
 HINT:  Use DROP ... CASCADE to drop the dependent objects too.
 CREATE FUNCTION
 ALTER FUNCTION
-INSERT 0 1
+psql:../transition/04-ApplicationNote.sql:1: ERROR:  duplicate key value violates unique constraint "administrative_source_type_pkey"
+DETAIL:  Key (code)=(note) already exists.
 UPDATE 1
-psql:../transition/06-party_stateTable.sql:1: NOTICE:  table "state_type" does not exist, skipping
 DROP TABLE
 psql:../transition/06-party_stateTable.sql:13: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "state_type_pkey" for table "state_type"
 CREATE TABLE
@@ -58,10 +58,15 @@ INSERT 0 1
 INSERT 0 1
 INSERT 0 1
 INSERT 0 1
-INSERT 0 1
-INSERT 0 1
-INSERT 0 1
-INSERT 0 1
-INSERT 0 1
-INSERT 0 1
-Finished at 10:31:32.86 
+psql:../transition/07-setting_state.sql:1: ERROR:  duplicate key value violates unique constraint "setting_pkey"
+DETAIL:  Key (name)=(state) already exists.
+psql:../transition/07-setting_state.sql:2: ERROR:  duplicate key value violates unique constraint "setting_pkey"
+DETAIL:  Key (name)=(featureFloatFront) already exists.
+psql:../transition/07-setting_state.sql:3: ERROR:  duplicate key value violates unique constraint "setting_pkey"
+DETAIL:  Key (name)=(featureFloatBack) already exists.
+psql:../transition/07-setting_state.sql:4: ERROR:  duplicate key value violates unique constraint "setting_pkey"
+DETAIL:  Key (name)=(featureFront) already exists.
+psql:../transition/07-setting_state.sql:5: ERROR:  duplicate key value violates unique constraint "setting_pkey"
+DETAIL:  Key (name)=(featureBack) already exists.
+INSERT 0 0
+Finished at 22:33:49.15 
